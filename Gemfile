@@ -50,12 +50,15 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rubocop', '~> 1.25', require: false
+  gem 'rubocop-rails', require: false
   gem 'slim_lint'
   gem 'sqlite3', '~> 1.4'
 end
 
 group :production do
   gem 'pg'
+  gem 'rollbar'
 end
 
 group :development do
@@ -72,8 +75,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'faker'
+  gem 'minitest-power_assert'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'minitest-power_assert'
-  gem 'faker'
 end
