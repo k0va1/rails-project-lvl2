@@ -2,6 +2,7 @@
 
 install:
 	bundle install
+	yarn install
 
 test:
 	bundle exec rake test
