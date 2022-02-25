@@ -43,6 +43,7 @@ gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'rollbar'
+gem 'simple_form'
 gem 'slim-rails'
 # Use Sass to process CSS
 # gem "sassc-rails"
