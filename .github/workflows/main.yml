@@ -25,4 +25,4 @@ jobs:
         run: make lint
 
       - name: Run Tests
-        run: make test
+        run: bundle exec rake assets:precompile && make test
