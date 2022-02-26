@@ -12,12 +12,18 @@ body
   header
     nav.navbar.navbar-expand-md.navbar-dark.bg-dark
       .container
-        a.navbar-brand href='#' Blog
+        = link_to('Blog', root_path, class: 'navbar-brand')
         ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-          li.nav-item.active
-            = link_to('Войти', new_user_session_path, class: 'nav-link')
-          li.nav-item
-            = link_to('Регистрация', new_user_registration_path, class: 'nav-link')
+          - if current_user.logged_in?
+            li.nav-item.active
+              = link_to('Создать пост', new_post_path, class: 'nav-link')
+            li.nav-item.active
+              = link_to('Выйти', destroy_user_session_path, class: 'nav-link', data: { turbo_method: :delete })
+          - else
+            li.nav-item.active
+              = link_to('Войти', new_user_session_path, class: 'nav-link')
+            li.nav-item
+              = link_to('Регистрация', new_user_registration_path, class: 'nav-link')
   main.flex-shrink-0.mt-5
     .container
       = yield
