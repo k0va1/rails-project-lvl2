@@ -11,6 +11,12 @@ lint:
 	bundle exec rubocop
 	bundle exec slim-lint app/views/
 
+db-reset:
+	bundle exec rails db:drop
+	bundle exec rails db:migrate
+	RAILS_ENV=test bundle exec rails db:migrate
+	bundle exec rails db:seed
+
 migrate:
 	bundle exec rails db:migrate
 	RAILS_ENV=test bundle exec rails db:migrate
@@ -23,3 +29,6 @@ deploy:
 
 ac:
 	bundle exec rubocop -a
+
+cons:
+	bundle exec rails c
