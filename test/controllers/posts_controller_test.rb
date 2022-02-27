@@ -1,36 +1,38 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
+  test 'should get index' do
     get posts_url
     assert_response :success
   end
 
-  test "should get show" do
+  test 'should get show' do
     get posts_path(Post.last)
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     sign_in(users(:one))
 
     get new_post_path
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     sign_in(users(:one))
 
     get edit_post_path(Post.last)
     assert_response :success
   end
 
-  test "should get update" do
+  test 'should get update' do
     #    get posts_update_url
     #    assert_response :success
   end
 
-  test "should get destory" do
+  test 'should get destory' do
     #   get posts_destory_url
     #   assert_response :success
   end

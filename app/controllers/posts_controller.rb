@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @posts = Post.all
@@ -27,11 +29,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def update
-  end
+  def update; end
 
-  def destory
-  end
+  def destory; end
 
   private
 

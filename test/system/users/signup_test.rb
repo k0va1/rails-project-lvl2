@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'application_system_test_case'
 
 module Users
   class SignupTest < ::ApplicationSystemTestCase
-    test "new user signup" do
+    test 'new user signup' do
       visit new_user_registration_path
 
       fill_in 'Email', with: 'test@test.ru'
