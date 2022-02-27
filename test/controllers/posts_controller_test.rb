@@ -12,11 +12,15 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+    sign_in(users(:one))
+
     get new_post_path
     assert_response :success
   end
 
   test "should get edit" do
+    sign_in(users(:one))
+
     get edit_post_path(Post.last)
     assert_response :success
   end
