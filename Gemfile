@@ -45,6 +45,7 @@ gem 'devise'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'rails-i18n'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
