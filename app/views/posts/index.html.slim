@@ -1,2 +1,17 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
+.container.my-4
+  h1 Коллективный блог
+  .row
+    - @posts.each do |p|
+      .col-md-12
+        .card.mb-3
+          .card-body
+            h5.card-title
+              = link_to(p.title, post_path(p))
+            .card-text.mb-2
+              = p.body
+            .text-right.small.text-muted.mt-auto
+              span.me-2 Понравилось: 0
+              span.me-2
+                = time_ago_in_words(p.created_at)
+              span
+                = p.creator.email

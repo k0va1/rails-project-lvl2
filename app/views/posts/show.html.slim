@@ -1,2 +1,24 @@
-h1 Posts#show
-p Find me in app/views/posts/show.html.slim
+.container.my-4
+  nav aria-label="breadcrumb"
+    ol.breadcrumb
+      li.breadcrumb-item
+        = link_to('Все статьи', root_path)
+      li.breadcrumb-item
+        = @post.post_category.name
+  .row.justify-content-center.mt-4
+    article.col-12
+      h1.mb-4.mb-lg-5
+        = @post.title
+      p
+        = @post.body
+      .d-flex.justify-content-between.mt-5
+        #post-section
+          span.me-2
+            = @post.creator.email
+          span
+            = time_ago_in_words(@post.created_at)
+        #likes-section
+          span.me-2 0
+  .lead.mb-3 Комментарии
+  .card.mb-4
+    .card-header.small.mb-2.d-flex

@@ -5,7 +5,7 @@ require 'application_system_test_case'
 module Users
   class SigninTest < ::ApplicationSystemTestCase
     test 'user signin' do
-      User.create(email: 'test@test.ru', password: 123123123)
+      User.create(email: 'test@test.ru', password: 123_123_123)
 
       visit new_user_session
 

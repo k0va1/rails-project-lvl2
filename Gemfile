@@ -42,10 +42,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise'
+gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'rails-i18n'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
