@@ -1,0 +1,4 @@
+= turbo_frame_tag dom_id_for_records(post, prefix: "comment_form") do
+  = simple_form_for(comment, url: post_comments_path(post)) do |f|
+    = f.input :content, label: false, input_html: { class: "mt-4" }
+    = f.button :submit, class: "btn-primary mt-4", onsubmit: "this.form.requestSubmit()"

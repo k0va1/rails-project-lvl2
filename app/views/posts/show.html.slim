@@ -19,6 +19,9 @@
             = time_ago_in_words(@post.created_at)
         #likes-section
           span.me-2 0
-  .lead.mb-3 Комментарии
-  .card.mb-4
-    .card-header.small.mb-2.d-flex
+  .lead.mb-3
+    | Комментарий
+    = render "posts/comments/form", post: @post, comment: @comment
+  = turbo_frame_tag dom_id_for_records(@post, prefix: 'comments')
+    - @post.post_comments.each do |pc|
+      = render "posts/comments/comment", comment: pc

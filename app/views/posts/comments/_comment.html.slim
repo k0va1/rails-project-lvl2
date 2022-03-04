@@ -1,0 +1,13 @@
+.card.mb-4
+  .card-header.small.mb-2.d-flex
+    div id="#{dom_id_for_records(comment)}"
+      span.font-weight-bold
+        = comment.user.email
+      span.mx-2.font-weight-light
+        = time_ago_in_words(comment.created_at)
+  .card-body.d-flex
+    .w-100
+      .mb-3
+        = comment.content
+    hr.my-2
+  .mb-2.m-4
