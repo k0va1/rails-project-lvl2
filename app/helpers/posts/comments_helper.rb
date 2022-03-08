@@ -2,5 +2,12 @@
 
 module Posts
   module CommentsHelper
+    def nested_comments(post, comments)
+      nested_comments_array = comments.map do |comment, sub_comments|
+        render('posts/comments/nested_comment', comment:, post:) +
+          content_tag(:div, nested_comments(post, sub_comments), class: 'ms-4')
+      end
+      safe_join(nested_comments_array)
+    end
   end
 end

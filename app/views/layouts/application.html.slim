@@ -18,7 +18,7 @@ body
             li.nav-item.active
               = link_to('Создать пост', new_post_path, class: 'nav-link')
             li.nav-item.active
-              = link_to('Выйти', destroy_user_session_path, class: 'nav-link', data: { turbo_method: :delete })
+              = link_to('Выйти', destroy_user_session_path, class: 'nav-link')
           - else
             li.nav-item.active
               = link_to('Войти', new_user_session_path, class: 'nav-link')

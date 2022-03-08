@@ -13,9 +13,16 @@ module Posts
       @post = Post.find(params[:post_id])
       @comment = @post.post_comments.new(user: current_user, **permitted_params)
 
-      if @comment.save
-        respond_to do |format|
+      respond_to do |format|
+        if @comment.save
           format.turbo_stream
+        else
+          format.turbo_stream do
+            render turbo_stream: turbo_stream.replace(
+              @comment, partial: 'posts/comments/form',
+                        locals: { post: @post, comment: @comment }
+            )
+          end
         end
       end
     end
@@ -23,7 +30,7 @@ module Posts
     private
 
     def permitted_params
-      params.require(:post_comment).permit(:content)
+      params.require(:post_comment).permit(:content, :parent_id)
     end
   end
 end

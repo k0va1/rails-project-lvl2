@@ -6,3 +6,5 @@ Style/Documentation:
 Metrics/BlockLength:
   Exclude:
     - "config/initializers/*.rb"
+Metrics/MethodLength:
+  Max: 20

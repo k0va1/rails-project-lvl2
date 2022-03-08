@@ -1,0 +1,5 @@
+div id="#{dom_id_for_records(post, prefix: 'post_like')}"
+  span.me-2
+    = post.post_likes_count
+    = link_to(post_likes_path(post), data: { "turbo-method": :post }) do
+      i.bi.bi-hand-thumbs-up

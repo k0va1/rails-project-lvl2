@@ -1,5 +1,5 @@
-= turbo_stream.replace dom_id_for_records(@post, prefix: "comment_form") do
-  = render "posts/comments/form", post: @post, comment: PostComment.new
+= turbo_stream.replace dom_id_for_records(@post, prefix: 'comment_form') do
+  = render 'posts/comments/form', post: @post, comment: PostComment.new
 
-= turbo_stream.append dom_id_for_records(@post, prefix: "comments") do
-  = render "posts/comments/comment", comment: @comment
+= turbo_stream.append dom_id_for_records(@post, prefix: 'comments') do
+  = render 'posts/comments/comment', post: @post, comment: @comment
