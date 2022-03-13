@@ -26,14 +26,4 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     get edit_post_path(Post.last)
     assert_response :success
   end
-
-  test 'should get update' do
-    #    get posts_update_url
-    #    assert_response :success
-  end
-
-  test 'should get destory' do
-    #   get posts_destory_url
-    #   assert_response :success
-  end
 end
