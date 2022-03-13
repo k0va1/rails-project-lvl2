@@ -7,4 +7,5 @@
     locals: { comment: @comment.root, post: @post }
 - else
   = turbo_stream.append dom_id_for_records(@post, prefix: 'comments') do
-    = render 'posts/comments/comment', post: @post, comment: @comment
+    div id="#{dom_id_for_records(@comment)}"
+      = render 'posts/comments/comment', post: @post, comment: @comment
