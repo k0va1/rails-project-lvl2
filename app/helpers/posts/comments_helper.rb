@@ -9,5 +9,9 @@ module Posts
       end
       safe_join(nested_comments_array)
     end
+
+    def id_for_comment_form(post, parent_comment = nil)
+      dom_id_for_records(post, parent_comment)
+    end
   end
 end

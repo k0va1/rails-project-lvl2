@@ -27,4 +27,5 @@
     = render 'posts/comments/form', post: @post, comment: @comment
   = turbo_frame_tag dom_id_for_records(@post, prefix: 'comments')
     - @post.post_comments.where(ancestry: nil).each do |pc|
-      = render 'posts/comments/comment', post: @post, comment: pc
+      div id="#{dom_id_for_records(pc)}"
+        = render 'posts/comments/comment', post: @post, comment: pc

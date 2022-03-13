@@ -1,4 +1,4 @@
-div id="#{dom_id_for_records(post, prefix: 'comment_form')}"
+div id="#{id_for_comment_form(post, comment.parent)}"
   = simple_form_for(comment, url: post_comments_path(post)) do |f|
     = f.input :parent_id, as: :hidden
     = f.input :content, label: false, input_html: { class: 'mt-4' }

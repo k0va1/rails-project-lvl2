@@ -1,5 +1,10 @@
-= turbo_stream.replace dom_id_for_records(@post, prefix: 'comment_form') do
+= turbo_stream.replace id_for_comment_form(@post, @comment.parent) do
   = render 'posts/comments/form', post: @post, comment: PostComment.new
 
-= turbo_stream.append dom_id_for_records(@post, prefix: 'comments') do
-  = render 'posts/comments/comment', post: @post, comment: @comment
+- if @comment.parent.present?
+  = turbo_stream.update dom_id_for_records(@comment.root),
+    partial: 'posts/comments/comment',
+    locals: { comment: @comment.root, post: @post }
+- else
+  = turbo_stream.append dom_id_for_records(@post, prefix: 'comments') do
+    = render 'posts/comments/comment', post: @post, comment: @comment

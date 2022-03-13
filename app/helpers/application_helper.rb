@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def dom_id_for_records(*records, prefix: nil)
-    records.map do |r|
+    records.compact.map do |r|
       dom_id(r, prefix)
     end.join('_')
   end
