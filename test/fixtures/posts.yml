@@ -11,3 +11,9 @@ two:
   body: MyText
   creator: two
   post_category: two
+
+with_comments:
+  title: test title
+  body: test body
+  creator: two
+  post_category: two
