@@ -5,7 +5,7 @@ module Posts
     before_action :set_post
 
     def create
-      @comment = @post.post_comments.new(user: current_user, **permitted_params)
+      @comment = @post.comments.new(user: current_user, **permitted_params)
 
       respond_to do |format|
         if @comment.save

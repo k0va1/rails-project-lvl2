@@ -4,16 +4,16 @@ one:
   title: MyString
   body: MyText
   creator: one
-  post_category: one
+  category: one
 
 two:
   title: MyString
   body: MyText
   creator: two
-  post_category: two
+  category: two
 
 with_comments:
   title: test title
   body: test body
   creator: two
-  post_category: two
+  category: two

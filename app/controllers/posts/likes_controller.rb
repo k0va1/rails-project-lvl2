@@ -4,7 +4,7 @@ module Posts
   class LikesController < ApplicationController
     def create
       @post = Post.find(params[:post_id])
-      @post_like = current_user.post_likes.find_or_create_by!(post: @post)
+      @post_like = current_user.likes.find_or_create_by!(post: @post)
 
       respond_to do |format|
         format.html { redirect_to(post_path(@post)) }

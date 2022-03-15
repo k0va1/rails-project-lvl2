@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
-  has_many :post_likes, dependent: :destroy
+  has_many :likes, class_name: 'PostLike', inverse_of: :user, dependent: :destroy
 
   def logged_in?
     true

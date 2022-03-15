@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:post_comments).find(params[:id])
+    @post = Post.includes(:comments).find(params[:id])
     @comment = PostComment.new(user: current_user, post: @post)
-    @post_like = @post.post_likes.merge(current_user.post_likes).first
+    @post_like = @post.likes.merge(current_user.likes).first
   end
 
   def new
