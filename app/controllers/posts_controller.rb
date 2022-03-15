@@ -27,14 +27,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
-
-  def update; end
-
-  def destory; end
-
   private
 
   def permitted_params
