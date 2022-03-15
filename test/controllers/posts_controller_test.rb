@@ -20,10 +20,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should get edit' do
+  test 'should create' do
     sign_in(users(:one))
 
-    get edit_post_path(Post.last)
-    assert_response :success
+    assert_difference('Post.count') do
+      post posts_path, params: { post: { title: 'title', body: 'body', post_category_id: PostCategory.last.id } }
+    end
+
+    assert_response :redirect
   end
 end
