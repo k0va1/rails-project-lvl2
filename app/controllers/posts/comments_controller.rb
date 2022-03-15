@@ -2,15 +2,9 @@
 
 module Posts
   class CommentsController < ApplicationController
-    skip_before_action :authenticate_user!, only: %i[index]
-
-    def index
-      @post = Post.find(params[:post_id])
-      @comments = @post.post_comments
-    end
+    before_action :set_post
 
     def create
-      @post = Post.find(params[:post_id])
       @comment = @post.post_comments.new(user: current_user, **permitted_params)
 
       respond_to do |format|
@@ -24,10 +18,15 @@ module Posts
             )
           end
         end
+        format.html { redirect_to(post_path(@post)) }
       end
     end
 
     private
+
+    def set_post
+      @post = Post.find(params[:post_id])
+    end
 
     def permitted_params
       params.require(:post_comment).permit(:content, :parent_id)
