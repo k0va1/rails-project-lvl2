@@ -7,10 +7,11 @@ module Posts
     test 'should create' do
       sign_in(users(:one))
 
-      assert_difference('PostComment.count') do
-        post = posts(:one)
-        post post_comments_path(post), params: { post_comment: { content: 'content' }, format: 'turbo_stream' }
-      end
+      new_comment_params = { content: 'content' }
+      post = posts(:one)
+      post post_comments_path(post), params: { post_comment: new_comment_params, format: 'turbo_stream' }
+
+      assert post.comments.exists?(new_comment_params)
     end
   end
 end

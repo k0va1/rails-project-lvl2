@@ -9,18 +9,19 @@ module Posts
     end
 
     test 'should get create' do
-      assert_difference('PostLike.count') do
-        post = posts(:two)
-        post post_likes_path(post), params: { post_like: { post_id: post.id }, format: 'turbo_stream' }
-      end
+      post = posts(:two)
+      new_post_like_params = { post_id: post.id }
+      post post_likes_path(post), params: { post_like: new_post_like_params, format: 'turbo_stream' }
+
+      assert post.likes.exists?(new_post_like_params)
     end
 
     test 'should get destroy' do
-      assert_difference('PostLike.count', -1) do
-        post = posts(:one)
-        like = post_likes(:one)
-        delete post_like_path(post, like), params: { format: 'turbo_stream' }
-      end
+      post = posts(:one)
+      like = post_likes(:one)
+      delete post_like_path(post, like), params: { format: 'turbo_stream' }
+
+      assert_not post.likes.exists?(like.id)
     end
   end
 end

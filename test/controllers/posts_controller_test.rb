@@ -23,9 +23,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test 'should create' do
     sign_in(users(:one))
 
-    assert_difference('Post.count') do
-      post posts_path, params: { post: { title: 'title', body: 'body', post_category_id: PostCategory.last.id } }
-    end
+    new_post_params = { title: 'title', body: 'body', post_category_id: PostCategory.last.id }
+    post posts_path, params: { post: new_post_params }
+
+    assert Post.exists?(new_post_params)
 
     assert_response :redirect
   end
