@@ -9,7 +9,7 @@ ru:
   activerecord:
     models:
       post: "Пост"
-      post_сomment: "Комментарий"
+      post_comment: "Комментарий"
     attributes:
       post:
         title: "Заголовок"
