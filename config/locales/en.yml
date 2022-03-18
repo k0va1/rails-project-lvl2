@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  all_posts: "All posts"
+  comments: "Comments"
+  create_post: "Create post"
+  blog_title: 'Blog'
+  likes_count: "Likes: %{likes_count}"
+  comment_reply: Reply

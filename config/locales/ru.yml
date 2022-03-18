@@ -1,0 +1,19 @@
+ru:
+  all_posts: "Все посты"
+  comments: "Комментарии"
+  create_post: "Создать пост"
+  blog_title: "Коллективный блог"
+  likes_count: "Понравилось: %{likes_count}"
+  comment_reply: "Ответить"
+
+  activerecord:
+    models:
+      post: "Пост"
+      post_сomment: "Комментарий"
+    attributes:
+      post:
+        title: "Заголовок"
+        body: "Teкст"
+        category: "Категория"
+      post_category:
+        name: "Название"

@@ -1,5 +1,5 @@
 .container.my-4
-  h1 Коллективный блог
+  h1 = t('blog_title')
   .row
     - @posts.each do |p|
       .col-md-12
@@ -10,7 +10,7 @@
             .card-text.mb-2
               = p.body
             .text-right.small.text-muted.mt-auto
-              span.me-2 Понравилось: #{p.post_likes_count}
+              span.me-2 = t('likes_count', likes_count: p.post_likes_count)
               span.me-2
                 = time_ago_in_words(p.created_at)
               span
