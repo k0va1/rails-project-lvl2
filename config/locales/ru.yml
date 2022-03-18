@@ -5,6 +5,10 @@ ru:
   blog_title: "Коллективный блог"
   likes_count: "Понравилось: %{likes_count}"
   comment_reply: "Ответить"
+  new_post: "Создать пост"
+  logout: "Выйти"
+  login: "Войти"
+  signup: "Регистрация"
 
   activerecord:
     models:

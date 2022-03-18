@@ -16,14 +16,14 @@ body
         ul.navbar-nav.mr-auto.mt-2.mt-lg-0
           - if current_user.logged_in?
             li.nav-item.active
-              = link_to('Создать пост', new_post_path, class: 'nav-link')
+              = link_to(t('new_post'), new_post_path, class: 'nav-link')
             li.nav-item.active
-              = link_to('Выйти', destroy_user_session_path, class: 'nav-link')
+              = link_to(t('logout'), destroy_user_session_path, class: 'nav-link')
           - else
             li.nav-item.active
-              = link_to('Войти', new_user_session_path, class: 'nav-link')
+              = link_to(t('login'), new_user_session_path, class: 'nav-link')
             li.nav-item
-              = link_to('Регистрация', new_user_registration_path, class: 'nav-link')
+              = link_to(t('signup'), new_user_registration_path, class: 'nav-link')
   main.flex-shrink-0.mt-5
     .container
       = yield

@@ -36,3 +36,7 @@ en:
   blog_title: 'Blog'
   likes_count: "Likes: %{likes_count}"
   comment_reply: Reply
+  new_post: "New post"
+  logout: "Logout"
+  login: "Login"
+  signup: "Sign Up"
