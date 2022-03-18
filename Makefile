@@ -5,7 +5,7 @@ install:
 	yarn install
 
 test:
-	bundle exec rake test
+	bundle exec rake assets:precompile && bundle exec rake test
 
 lint:
 	bundle exec rubocop
