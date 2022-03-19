@@ -13,6 +13,6 @@
           = nested_comments(post, comment.descendants.arrange(order: :created_at))
   hr.my-2
   .mb-2.m-4
-    a data-bs-toggle='collapse' href="#new_post_comment_#{comment.id}" Ответить
+    a data-bs-toggle='collapse' href="#new_post_comment_#{comment.id}" = t('comment_reply')
     .collapse data-bs-target="#new_post_comment_#{comment.id}" id="new_post_comment_#{comment.id}"
       = render 'posts/comments/form', post: post, comment: PostComment.new(parent_id: comment.id)
